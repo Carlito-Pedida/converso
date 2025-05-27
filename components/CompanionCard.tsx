@@ -46,7 +46,7 @@ const CompanionCard = ({
 
       <Link href={`/companions/${id}`} className="w-full">
         <button className="btn-primary w-full justify-center">
-          launch Lesson
+          Launch Lesson
         </button>
       </Link>
     </article>

@@ -13,8 +13,8 @@ import Link from "next/link";
 
 interface CompanionsListProps {
   title: string;
-  companions: Companion[];
-  classNames: string;
+  companions?: Companion[];
+  classNames?: string;
 }
 
 const CompanionsList = ({
@@ -24,7 +24,7 @@ const CompanionsList = ({
 }: CompanionsListProps) => {
   return (
     <article className={cn("companion-list", classNames)}>
-      <h2 className="font-bold text-3xl">Recent Sessions</h2>
+      <h2 className="font-bold text-3xl">{title}</h2>
       <Table>
         <TableHeader>
           <TableRow>
@@ -34,8 +34,8 @@ const CompanionsList = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {companions?.map((companion) => (
-            <TableRow key={companion.id}>
+          {companions?.map((companion, index) => (
+            <TableRow key={index}>
               <TableCell>
                 <Link href={`/companions/${companion.id}`}>
                   <div className="flex items-center gap-2">
